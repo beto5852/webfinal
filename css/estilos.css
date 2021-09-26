@@ -1,0 +1,430 @@
+@font-face {
+  font-family: "Roboto", "Poppins", sans-serif;
+  src: url("fonts/Roboto-Black.ttf"), url("fonts/Roboto-Bold.ttf"),
+    url("fonts/Roboto-Regular.ttf"), url("fonts/Poppins-Black.ttf"),
+    url("fonts/Poppins-Bold.ttf"), url("fonts/Poppins-ExtraBold.ttf"),
+    url("fonts/Poppins-Regular.ttf");
+}
+
+:root {
+  --fuente-principal: "Poppins", sans-serif;
+  --fuente-secundaria: "Roboto", sans-serif;
+  --color-primario: #dc8821;
+  --color-secundario: #51924b;
+  --color-fuente-principla: #24334b;
+  --color-blancos: #ffff;
+  --color-fuente-secundaria: #817242;
+  --color-fuente-claro: #5ba69c;
+  --color-fuente-grande: #332825;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  font-size: 16px;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+
+h2 {
+  color: var(--color-secundario);
+  font-size: 2rem;
+  font-weight: 700;
+  padding-left: 0.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+img {
+  width: 100%;
+}
+
+
+
+/* Interfaz */
+
+.contenedor {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.hero {
+  height: 100vh;
+  background: url("../assets/slider/563161.jpg") no-repeat center;
+  background-size: cover;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.logo img {
+  background-size: c;
+  /* width: 316px !important; */
+  height: auto;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+  align-items: center;
+  padding-top: 1rem;
+  z-index: 100;
+}
+
+.navegacion {
+  display: none;
+}
+
+.icon {
+  margin-left: auto;
+  margin-right: 2rem;
+  font-weight: 600;
+  font-size: 2rem; 
+}
+
+.icon a {
+  color: white;
+}
+
+@media  screen and (min-width:1000px) {
+  
+  .icon {
+    display: none;
+  }
+  .navegacion {
+    display: block;
+  }
+}
+
+
+.navegacion a {
+  font-family: var(--fuente-secundaria);
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 0 5px var(--color-fuente-grande);
+}
+
+.navegacion a:hover {
+  color: #dc8821;
+  text-shadow: none;
+  border-bottom: 5px solid #dc8821;
+  transition: all 0.5s ease;
+}
+
+nav.navegacion a:last-of-type {
+  margin-right: 0px;
+}
+
+.contenido-hero {
+  width: min(800px, 80%);
+  display: grid;
+  grid-template-columns: 0 auto 0;
+  grid-template-rows: max-content auto;
+  z-index: 1;
+}
+
+.contenido-hero h1 {
+  grid-column: 2 / 3;
+  color: white;
+  text-shadow: 0 0 5px #332825;
+}
+
+.contenido-hero form {
+  grid-column: 2 /3;
+  grid-row: 2/ 3;
+  position: relative;
+  display: flex;
+  height: 4rem;
+}
+
+form input[type="text"] {
+  flex: 1;
+  border: none;
+  border-radius: 10px;
+  background: white url("../assets/iconos/search.png") no-repeat calc(1% + 1rem)
+    calc(1% + 0.2rem);
+  padding-left: 6rem;
+  font-size: 1.5rem;
+}
+
+form input[type="text"]:focus {
+  outline: none;
+}
+
+form input[type="submit"] {
+  font-family: var(--fuente-secundaria);
+  font-size: 1.25rem;
+  position: absolute;
+  right: 1rem;
+  top: 0.6rem;
+  padding: 0.7rem 2rem;
+  border: none;
+  background: var(--color-primario);
+  border-radius: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+form input[type="submit"]:hover {
+  background: var(--color-fuente-secundaria);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+/*  contenido principal */
+
+.contenedor-cards {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+
+.card {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  object-position: left center;
+}
+.contenedor-cards .card:nth-child(2) img {
+  object-position: center center;
+}
+
+.contenedor-cards .card:nth-child(3) img {
+  object-position: right center;
+}
+.info {
+  padding-left: 1rem;
+  padding-bottom: 2rem;
+  margin: auto;
+}
+
+.info .categoria {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.deporte {
+  color: var(--color-fuente-claro);
+}
+
+.juegos {
+  color: var(--color-secundario);
+}
+.eventos {
+  color: var(--color-fuente-secundaria);
+}
+
+.info .titulo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-fuente-grande);
+}
+
+.info .precio {
+  color: var(--color-fuente-principla);
+}
+
+.info .precio span {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.banner {
+  margin-top: 4rem;
+}
+
+/* Banner de la ciudad colonial*/
+
+.especial {
+  background: url("../assets/banner/granada.jpg") no-repeat center top;
+  grid-template-columns: unset;
+  height: 30rem;
+}
+.especial .info {
+  height: 93%;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--color-blancos);
+}
+
+
+@media (min-width: 768px) {
+  .especial {
+    grid-template-columns: auto 40%;
+  }
+  .especial .info {
+    grid-column: 2 / 3;
+  }
+}
+
+.especial .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.boton {
+    background: var(--color-primario);
+    color: var(--color-blancos);
+    width: 190px;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    align-self: flex-end;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+
+.boton:hover {
+    background: #e78103;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.especial .info h3 {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .especial .info h3 {
+    text-align: right;
+  }
+}
+
+.contenedor-cards .card .star{
+  margin-left: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contenedor-cards .card .star h6 {
+  margin-right: 2rem;
+}
+.contenedor-cards .card .star span {
+  margin-left: 0.5rem;
+} 
+
+
+/* destinos mas populares de nicaragua */
+
+.destinos .contenedor-cards {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+.destinos .card img {
+  height: 400px;
+}
+.destinos .card {
+  position: relative;
+}
+
+.destinos .info {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.destinos .info .titulo {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
+}
+
+.destinos .info span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-fuente-claro);
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
+}
+
+
+/* galeria de imagenes */
+
+
+.galeria .card img {
+  height: 300px;
+}
+.galeria {
+
+}
+
+/* footer */
+
+.footer {
+  background: var(--color-fuente-principla);
+  height: 70vh;
+  margin-bottom: 0;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.footer .contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+.footer .nav-footer {
+  padding: 1rem;
+}
+
+.footer .nav-footer .menu a {
+  margin-left: 2rem;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.footer .nav-footer img {
+  width: 300px;
+}
+.footer .nav-footer ul {
+  display: flex;
+  justify-content: center;
+ }
+.footer .nav-footer ul li {
+margin-left: 2rem;
+ list-style: none;
+}
+
+.footer .nav-footer .redes ul li {
+  color: white;
+  font-size: 2rem;
+}
